@@ -1,6 +1,6 @@
 {
   "name": "jaaulde-cookies",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Javascript library for accessing and manipulating HTTP cookies in the web browser",
   "main": "lib/jaaulde-cookies.js",
   "scripts": {
