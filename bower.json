@@ -1,12 +1,12 @@
 {
-  "name": "cookies",
+  "name": "jaaulde-cookies",
   "version": "3.0.0",
   "homepage": "https://github.com/JAAulde/cookies",
   "authors": [
     "Jim Auldridge <auldridgej@gmail.com>"
   ],
   "description": "Javascript library for accessing and manipulating HTTP cookies in the web browser",
-  "main": "cookies.jaaulde.js",
+  "main": "lib/cookies.jaaulde.js",
   "keywords": [
     "cookies",
     "storage",
