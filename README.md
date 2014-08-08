@@ -74,4 +74,4 @@ cookies.del(true);
 |domain|Domain for which the cookie be available|`null` (current domain)||
 |path|Path for which the cookie be available|`'/'`||
 |expires|Date object representing expiration date/time of cookie| `null` (expires when browser closes)|Setting a past date/time will delete the cookie|
-|secure|Should cookie be sent to server via HTTPS only?|false||
+|secure|Should cookie be sent to server via HTTPS only?|`false`||
