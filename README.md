@@ -26,11 +26,39 @@ npm install jaaulde-cookies
 This library is intended for use in the browser to access and manipulate cookies. It provides a singleton API, `cookies`, in the global namespace (`window`).
 
 ### Test for browser cookie acceptance
+#### `cookies.test()` signature
+````javascript
+/**
+ * test - test whether the browser is accepting cookies
+ *
+ * @access public
+ * @static
+ * @return {boolean}
+ */
+test: function ()
+````
+#### example
 ````javascript
 var accepting_cookies = cookies.test(); // returns boolean
 ````
 
 ### Set cookies
+#### `cookies.set()` signature
+````javascript
+/**
+ * set - set or delete a cookie with desired options
+ *
+ * @access public
+ * @static
+ * @param {string} n - name of cookie to set
+ * @param {mixed} v - Any JS value. If not a string and JSON support present will be JSON encoded
+ *                  {null} to delete
+ * @param {object} o - optional list of cookie options to specify
+ * @return {void}
+ */
+set: function (n, v, o)
+````
+#### examples
 ````javascript
 // sets cookie by the name of 'myCookie' to value of 'myValue' with default options
 cookies.set('myCookie', 'myValue');
@@ -39,6 +67,23 @@ cookies.set('myCookie', 'myValue');
 cookies.set('myCookie', 'myValue', {path: '/somedir'});
 ````
 ### Get cookies
+#### `cookies.get()` signature
+````javascript
+/**
+ * get - get one, several, or all cookies
+ *
+ * @access public
+ * @static
+ * @param {mixed} n {string} name of single cookie
+ *                  {array} list of multiple cookie names
+ *                  {void} if you want all cookies
+ * @return {mixed} type/value of cookie as set
+ *                 {null} if only one cookie is requested and is not found
+ *                 {object} hash of multiple or all cookies (if multiple or all requested)
+ */
+get: function (n)
+````
+#### examples
 ````javascript
 // returns value of myCookie if it is present, null if not
 cookies.get('myCookie');
@@ -51,13 +96,41 @@ cookies.get();
 ````
 
 ### Get filtered list of Cookies
+#### `cookies.filter()` signature
+````javascript
+/**
+ * filter - get array of cookies whose names match the provided RegExp
+ *
+ * @access public
+ * @static
+ * @param {RegExp} p The regular expression to match against cookie names
+ * @return {object} hash of cookies whose names match the RegExp
+ */
+filter: function (p)
+````
+#### examples
 ````javascript
 // returns list of cookies whose names start with "site"
 cookies.filter( /^site/ );
 ````
 
 ### Delete Cookies
-*(A cookie can only be deleted using the same options with which it was set)*
+**note:** *A cookie can only be deleted using the same options with which it was set*
+#### `cookies.del()` signature
+````javascript
+/**
+ * del - delete a cookie (domain and path options must match those with which the cookie was set; this is really an alias for set() with parameters simplified for this use)
+ *
+ * @access public
+ * @static
+ * @param {mixed} n {string} name of cookie to delete
+ *                  {boolean} true to delete all
+ * @param {object} o optional list of cookie options to specify (path, domain)
+ * @return {void}
+ */
+del: function (n, o)
+````
+#### examples
 ````javascript
 // deletes a cookie, 'myCookie', with default options
 cookies.del('myCookie');
