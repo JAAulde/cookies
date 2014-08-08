@@ -143,7 +143,7 @@ cookies.del(true);
 ````
 ### Cookie options
 |Option|Description|Default|Note|
-|------|-----------|-------|----|
+|:-----|:----------|:------|:---|
 |domain|Domain for which the cookie be available|`null` (current domain)||
 |path|Path for which the cookie be available|`'/'`||
 |expires|Date object representing expiration date/time of cookie| `null` (expires when browser closes)|Setting a past date/time will delete the cookie|
