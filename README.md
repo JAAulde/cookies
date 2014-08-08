@@ -38,3 +38,33 @@ cookies.set('myCookie', 'myValue');
 // sets cookie by the name of 'myCookie' to value of 'myValue' with path of '/somedir'
 cookies.set('myCookie', 'myValue', {path: '/somedir'});
 ````
+### Get cookies
+````javascript
+// returns value of myCookie if it is present, null if not
+cookies.get('myCookie');
+
+// returns array containing value of each requested cookie if it is present, null if not
+cookies.get(['myCookie', 'myOtherCookie']);
+
+// returns array of all cookies from your site
+cookies.get();
+````
+
+### Get filtered list of Cookies
+````javascript
+// returns list of cookies whose names start with "site"
+cookies.filter( /^site/ );
+````
+
+### Delete Cookies
+*(A cookie can only be deleted using the same options with which it was set)*
+````javascript
+// deletes a cookie, 'myCookie', with default options
+cookies.del('myCookie');
+
+// deletes a cookie by the name of 'myCookie' which had been set with a path of '/somedir'
+cookies.del('myCookie', {path: '/somedir'});
+
+// deletes all cookies
+cookies.del(true);
+````
