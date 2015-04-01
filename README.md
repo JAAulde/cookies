@@ -8,11 +8,6 @@ Get one or a list of cookies, set cookies, delete cookies, test if the browser a
 [![NPM version](https://badge.fury.io/js/jaaulde-cookies.png)](http://badge.fury.io/js/jaaulde-cookies)
 
 ## installation
-### html
-````html
-<script src="/path/to/jaaulde-cookies.js"></script>
-````
-
 ### bower
 ````bash
 bower install jaaulde-cookies
@@ -21,6 +16,12 @@ bower install jaaulde-cookies
 ### npm
 ````bash
 npm install jaaulde-cookies
+````
+
+### html
+Download the code, link it in your HTML file.
+````html
+<script src="/path/to/jaaulde-cookies.js"></script>
 ````
 
 ## usage
