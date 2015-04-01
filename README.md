@@ -105,10 +105,10 @@ get: function (n)
 // returns value of myCookie if it is present, null if not
 var my_cookie = cookies.get('myCookie');
 
-// returns array containing value of each requested cookie if it is present, null if not
+// returns object in key/value form of each requested cookie if it is present, null if not
 var some_cookies = cookies.get(['myCookie', 'myOtherCookie']);
 
-// returns array of all available cookies from your site
+// returns object in key/value form of all available cookies from your site
 var all_cookies = cookies.get();
 ````
 
@@ -117,7 +117,7 @@ var all_cookies = cookies.get();
 ##### signature
 ````javascript
 /**
- * filter - get array of cookies whose names match the provided RegExp
+ * filter - get hash of cookies whose names match the provided RegExp
  *
  * @access public
  * @static
@@ -128,7 +128,7 @@ filter: function (p)
 ````
 ##### examples
 ````javascript
-// returns list of cookies whose names start with "site"
+// returns object in key/value form of cookies whose names start with "site"
 var filtered_cookies = cookies.filter(/^site/);
 ````
 
