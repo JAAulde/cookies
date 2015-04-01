@@ -52,7 +52,9 @@ test: function ()
 ````
 ##### example
 ````javascript
-var accepting_cookies = cookies.test(); // returns boolean
+if (cookies.test()) {
+    // browser is accepting cookies!
+}
 ````
 
 ### Set cookies
