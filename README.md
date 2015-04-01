@@ -103,13 +103,13 @@ get: function (n)
 ##### examples
 ````javascript
 // returns value of myCookie if it is present, null if not
-cookies.get('myCookie');
+var my_cookie = cookies.get('myCookie');
 
 // returns array containing value of each requested cookie if it is present, null if not
-cookies.get(['myCookie', 'myOtherCookie']);
+var some_cookies = cookies.get(['myCookie', 'myOtherCookie']);
 
-// returns array of all cookies from your site
-cookies.get();
+// returns array of all available cookies from your site
+var all_cookies = cookies.get();
 ````
 
 ### Get filtered list of Cookies
@@ -121,7 +121,7 @@ cookies.get();
  *
  * @access public
  * @static
- * @param {RegExp} p The regular expression to match against cookie names
+ * @param {RegExp} p The regular expression pattern to match against cookie names
  * @return {object} hash of cookies whose names match the RegExp
  */
 filter: function (p)
@@ -129,7 +129,7 @@ filter: function (p)
 ##### examples
 ````javascript
 // returns list of cookies whose names start with "site"
-cookies.filter( /^site/ );
+var filtered_cookies = cookies.filter(/^site/);
 ````
 
 ### Delete Cookies
