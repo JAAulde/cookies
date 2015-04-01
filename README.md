@@ -8,12 +8,12 @@ Get one or a list of cookies, set cookies, delete cookies, test if the browser a
 [![NPM version](https://badge.fury.io/js/jaaulde-cookies.png)](http://badge.fury.io/js/jaaulde-cookies)
 
 ## installation
-### bower
+### [bower](http://bower.io)
 ````bash
 bower install jaaulde-cookies
 ````
 
-### npm
+### [npm](https://www.npmjs.com)
 ````bash
 npm install jaaulde-cookies
 ````
@@ -25,10 +25,21 @@ Download the code, link it in your HTML file.
 ````
 
 ## usage
-This library is intended for use in the browser to access and manipulate cookies. It provides a singleton API, `cookies`, in the global namespace (`window`).
+This library is intended for use in the browser to access and manipulate cookies. It provides a singleton API, `cookies`.
+
+### Cookie options
+As you'll see in the docs below, many of the methods can take an `options` parameter. The options that can  be set are:
+
+|Option|Description|Default|Note|
+|:-----|:----------|:------|:---|
+|domain|Domain for which the cookie be available|`null` (current domain)||
+|path|Path for which the cookie be available|`'/'`||
+|expires|Date object representing expiration date/time of cookie| `null` (expires when browser closes)|Setting a past date/time will delete the cookie|
+|secure|Should cookie be sent to server via HTTPS only?|`false`||
 
 ### Test for browser cookie acceptance
-#### `cookies.test()` signature
+#### `cookies.test()`
+##### signature
 ````javascript
 /**
  * test - test whether the browser is accepting cookies
@@ -39,13 +50,14 @@ This library is intended for use in the browser to access and manipulate cookies
  */
 test: function ()
 ````
-#### example
+##### example
 ````javascript
 var accepting_cookies = cookies.test(); // returns boolean
 ````
 
 ### Set cookies
-#### `cookies.set()` signature
+#### `cookies.set()`
+##### signature
 ````javascript
 /**
  * set - set or delete a cookie with desired options
@@ -60,7 +72,7 @@ var accepting_cookies = cookies.test(); // returns boolean
  */
 set: function (n, v, o)
 ````
-#### examples
+##### examples
 ````javascript
 // sets cookie by the name of 'myCookie' to value of 'myValue' with default options
 cookies.set('myCookie', 'myValue');
@@ -69,7 +81,8 @@ cookies.set('myCookie', 'myValue');
 cookies.set('myCookie', 'myValue', {path: '/somedir'});
 ````
 ### Get cookies
-#### `cookies.get()` signature
+#### `cookies.get()`
+##### signature
 ````javascript
 /**
  * get - get one, several, or all cookies
@@ -85,7 +98,7 @@ cookies.set('myCookie', 'myValue', {path: '/somedir'});
  */
 get: function (n)
 ````
-#### examples
+##### examples
 ````javascript
 // returns value of myCookie if it is present, null if not
 cookies.get('myCookie');
@@ -98,7 +111,8 @@ cookies.get();
 ````
 
 ### Get filtered list of Cookies
-#### `cookies.filter()` signature
+#### `cookies.filter()`
+##### signature
 ````javascript
 /**
  * filter - get array of cookies whose names match the provided RegExp
@@ -110,7 +124,7 @@ cookies.get();
  */
 filter: function (p)
 ````
-#### examples
+##### examples
 ````javascript
 // returns list of cookies whose names start with "site"
 cookies.filter( /^site/ );
@@ -118,7 +132,8 @@ cookies.filter( /^site/ );
 
 ### Delete Cookies
 **note:** *A cookie can only be deleted using the same options with which it was set*
-#### `cookies.del()` signature
+#### `cookies.del()`
+##### signature
 ````javascript
 /**
  * del - delete a cookie (domain and path options must match those with which the cookie was set; this is really an alias for set() with parameters simplified for this use)
@@ -132,7 +147,7 @@ cookies.filter( /^site/ );
  */
 del: function (n, o)
 ````
-#### examples
+##### examples
 ````javascript
 // deletes a cookie, 'myCookie', with default options
 cookies.del('myCookie');
@@ -143,10 +158,3 @@ cookies.del('myCookie', {path: '/somedir'});
 // deletes all cookies
 cookies.del(true);
 ````
-### Cookie options
-|Option|Description|Default|Note|
-|:-----|:----------|:------|:---|
-|domain|Domain for which the cookie be available|`null` (current domain)||
-|path|Path for which the cookie be available|`'/'`||
-|expires|Date object representing expiration date/time of cookie| `null` (expires when browser closes)|Setting a past date/time will delete the cookie|
-|secure|Should cookie be sent to server via HTTPS only?|`false`||
