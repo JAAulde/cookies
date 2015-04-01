@@ -1,24 +1,25 @@
 {
-  "name": "jaaulde-cookies",
-  "version": "3.0.5",
-  "description": "Javascript library for accessing and manipulating HTTP cookies in the web browser",
-  "main": "lib/jaaulde-cookies.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
+    "name": "jaaulde-cookies",
+    "version": "3.0.5",
+    "description": "Javascript library for accessing and manipulating HTTP cookies in the web browser",
+    "author": "Jim Auldridge <auldridgej@gmail.com>",
+    "main": "lib/jaaulde-cookies.js",
+    "keywords": [
+        "cookie",
+        "cookies",
+        "storage",
+        "json"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
     "type": "git",
-    "url": "https://github.com/JAAulde/cookies.git"
-  },
-  "keywords": [
-    "cookies",
-    "storage",
-    "json"
-  ],
-  "author": "Jim Auldridge <auldridgej@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JAAulde/cookies/issues"
-  },
-  "homepage": "https://github.com/JAAulde/cookies"
+        "url": "https://github.com/JAAulde/cookies.git"
+    },
+    "bugs": {
+        "url": "https://github.com/JAAulde/cookies/issues"
+    },
+    "homepage": "https://github.com/JAAulde/cookies"
 }
