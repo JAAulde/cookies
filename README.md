@@ -38,6 +38,7 @@ As you'll see in the docs below, many of the methods can take an `options` param
 |path|Path for which the cookie be available|`'/'`||
 |expires|Date object representing expiration date/time of cookie| `null` (expires when browser closes)|Setting a past date/time will delete the cookie|
 |secure|Should cookie be sent to server via HTTPS only?|`false`||
+|samesite|Should cookie be restricted to a first-party or same-site context?|`'lax'`||
 
 ### Test for browser cookie acceptance
 #### `cookies.test()`
